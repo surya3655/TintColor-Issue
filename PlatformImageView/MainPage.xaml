@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PlatformImageView"
+              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PlatformImageView.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <!--Expected Behavior-->
+            <Label Text="Expected Image:" FontSize="Body" FontAttributes="Bold"/>
+            <Image VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Source="add_circle.png"
+                           WidthRequest="40"
+                           HeightRequest="40">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Yellow" />
+                        </Image.Behaviors>
+                    </Image>
+            <Label Text="OutputImage" FontSize="Body" FontAttributes="Bold"/>
+            <local:CustomView>
+                <local:CustomView.ItemContent>
+                    <Image VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Source="add_circle.png"
+                            WidthRequest="40"
+                            HeightRequest="40">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Red" />
+                        </Image.Behaviors>
+                    </Image>
+                </local:CustomView.ItemContent>
+
+            </local:CustomView>
+
+            <local:CustomView>
+                <local:CustomView.ItemTemplate>
+                    <DataTemplate>
+                        <Image VerticalOptions="Center"
+                              HorizontalOptions="Center"
+                              Source="add_circle.png"
+                              WidthRequest="40"
+                              HeightRequest="40">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="Red" />
+                            </Image.Behaviors>
+                        </Image>
+                    </DataTemplate>
+                </local:CustomView.ItemTemplate>
+
+            </local:CustomView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
